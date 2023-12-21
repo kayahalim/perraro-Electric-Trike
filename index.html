@@ -22,11 +22,11 @@
     renderer.setSize(viewer.clientWidth, viewer.clientHeight);
     viewer.appendChild(renderer.domElement);
 
-    const loader = new THREE.FBXLoader();
+    const loader = new THREE.GLTFLoader();
 
-    // Replace 'YOUR_RAW_GITHUB_URL' with the raw GitHub content URL to your FBX file
-    loader.load('YOUR_RAW_GITHUB_URL', (fbx) => {
-      scene.add(fbx);
+    // Replace 'YOUR_RAW_GITHUB_URL' with the raw GitHub content URL to your GLB file
+    loader.load('https://raw.githubusercontent.com/kayahalim/perraro-Electric-Trike/main/Jaguar-Dual-Motor-ebike.glb', (gltf) => {
+      scene.add(gltf.scene);
     });
 
     camera.position.z = 5;
